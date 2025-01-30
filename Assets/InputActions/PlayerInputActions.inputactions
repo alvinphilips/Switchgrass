@@ -1,0 +1,76 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "c7c4daad-b3d6-4537-a067-060f6f4107a3",
+            "actions": [
+                {
+                    "name": "Steering",
+                    "type": "Value",
+                    "id": "74c69a27-663a-4103-99ae-47769d9ac37f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Acceleration",
+                    "type": "Value",
+                    "id": "a2da7414-f1aa-4f0d-a01a-a99d1c413279",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "262c9ac0-2d17-4a8c-a6b6-4cb8da03c53b",
+                    "path": "<Gamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Gamepad",
+                    "id": "40a03a83-28cd-45d8-8095-b9e654d4430d",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Acceleration",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "4baabf48-2d18-4230-9bca-ed19e619e291",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Acceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "e2db1c3e-07bb-4785-af55-6008654e55c0",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Acceleration",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
