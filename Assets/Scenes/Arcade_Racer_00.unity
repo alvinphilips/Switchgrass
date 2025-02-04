@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.43377823
+  racingLine: 0.64
   next: {fileID: 46749281}
   prev: {fileID: 692290798}
 --- !u!4 &45066891
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.21987388
+  racingLine: 0.63
   next: {fileID: 1339175637}
   prev: {fileID: 45066890}
 --- !u!4 &46749282
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.09493493
+  racingLine: -0.42
   next: {fileID: 1954268087}
   prev: {fileID: 661974460}
 --- !u!4 &111193403
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.05682331
+  racingLine: -0.25
   next: {fileID: 1648063882}
   prev: {fileID: 505085342}
 --- !u!4 &121075170
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.17293458
+  racingLine: 0.04
   next: {fileID: 979314709}
   prev: {fileID: 1590702640}
 --- !u!4 &129291133
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.64834344
+  racingLine: 0.08
   next: {fileID: 897582253}
   prev: {fileID: 364662667}
 --- !u!4 &162191652
@@ -1397,7 +1397,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &202228506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.73631454
+  racingLine: 0.31
   next: {fileID: 162191651}
   prev: {fileID: 323806917}
 --- !u!4 &364662668
@@ -2951,7 +2951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.28
+  racingLine: -0.14
   next: {fileID: 742127781}
   prev: {fileID: 1648063882}
 --- !u!4 &458604272
@@ -7906,7 +7906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.06192353
+  racingLine: -0.33
   next: {fileID: 121075169}
   prev: {fileID: 843374380}
 --- !u!4 &505085343
@@ -8061,7 +8061,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &510760787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,7 +8130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.050309435
+  racingLine: 0.47
   next: {fileID: 692290798}
   prev: {fileID: 878857636}
 --- !u!4 &526444241
@@ -8624,7 +8624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.16
+  racingLine: -0.38
   next: {fileID: 730175240}
   prev: {fileID: 728340045}
 --- !u!4 &648223413
@@ -8735,7 +8735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.22791453
+  racingLine: -0.3
   next: {fileID: 111193402}
   prev: {fileID: 1478751449}
 --- !u!1 &665654128
@@ -8847,7 +8847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.10928891
+  racingLine: 0.52
   next: {fileID: 45066890}
   prev: {fileID: 526444240}
 --- !u!4 &692290799
@@ -9249,7 +9249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.38
+  racingLine: -0.54
   next: {fileID: 648223412}
   prev: {fileID: 989380654}
 --- !u!4 &728340046
@@ -9297,7 +9297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.29
+  racingLine: 0.11
   next: {fileID: 2044762950}
   prev: {fileID: 648223412}
 --- !u!4 &730175241
@@ -9424,7 +9424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.14135978
+  racingLine: -0.23
   next: {fileID: 1625734582}
   prev: {fileID: 458604271}
 --- !u!1 &765985076
@@ -9759,7 +9759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.0002680984
+  racingLine: -0.47
   next: {fileID: 505085342}
   prev: {fileID: 1441862337}
 --- !u!1001 &875497799
@@ -9916,7 +9916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.15873392
+  racingLine: 0.39
   next: {fileID: 526444240}
   prev: {fileID: 1845343212}
 --- !u!1 &897582252
@@ -9949,7 +9949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.60807115
+  racingLine: -0.22
   next: {fileID: 1562082725}
   prev: {fileID: 162191651}
 --- !u!4 &897582254
@@ -15405,7 +15405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.16078132
+  racingLine: 0.24
   next: {fileID: 910184162}
   prev: {fileID: 129291132}
 --- !u!4 &979314710
@@ -21829,7 +21829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.35
+  racingLine: -0.25
   next: {fileID: 989380654}
   prev: {fileID: 1867229948}
 --- !u!4 &1197827875
@@ -26747,7 +26747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.24
+  racingLine: 0.21
   next: {fileID: 1867229948}
   prev: {fileID: 2039573280}
 --- !u!4 &1208937336
@@ -31858,7 +31858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.30851924
+  racingLine: 0.62
   next: {fileID: 1543900368}
   prev: {fileID: 46749281}
 --- !u!4 &1339175638
@@ -32189,7 +32189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.029482868
+  racingLine: -0.44
   next: {fileID: 843374380}
   prev: {fileID: 1954268087}
 --- !u!4 &1441862338
@@ -32243,7 +32243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.2587038
+  racingLine: 0.11
   next: {fileID: 661974460}
   prev: {fileID: 1690701056}
 --- !u!4 &1478751450
@@ -32440,7 +32440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.87481344
+  racingLine: 0.77
   next: {fileID: 1709925393}
   prev: {fileID: 1339175637}
 --- !u!4 &1553742885 stripped
@@ -32621,7 +32621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.6597374
+  racingLine: -0.54
   next: {fileID: 1890465683}
   prev: {fileID: 897582253}
 --- !u!4 &1562082726
@@ -32969,7 +32969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0
+  racingLine: -0.43
   next: {fileID: 129291132}
   prev: {fileID: 1890465683}
 --- !u!1 &1601142644
@@ -33414,7 +33414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.14192733
+  racingLine: -0.21
   next: {fileID: 458604271}
   prev: {fileID: 121075169}
 --- !u!4 &1648063883
@@ -33623,7 +33623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.3447623
+  racingLine: 0.48
   next: {fileID: 1478751449}
   prev: {fileID: 313094085}
 --- !u!1 &1696833826
@@ -38644,7 +38644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.8809568
+  racingLine: 0.82
   next: {fileID: 217006798}
   prev: {fileID: 1543900368}
 --- !u!1001 &1710132713
@@ -39214,7 +39214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.29112068
+  racingLine: 0.47
   next: {fileID: 143381567}
   prev: {fileID: 217006798}
 --- !u!4 &1800733476
@@ -39527,7 +39527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.5526839
+  racingLine: 0.1
   next: {fileID: 878857636}
   prev: {fileID: 2111833800}
 --- !u!4 &1845343213
@@ -39601,15 +39601,15 @@ MonoBehaviour:
   skidFade: 2
   currentTrackNode: {fileID: 910184162}
   lookaheadDistance: 7.12
-  turnInputMultiplier: 5000
+  turnInputMultiplier: 10
   accelerationBySteeringAngle:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.5
-      inSlope: -0.5
-      outSlope: -0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -39617,8 +39617,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: -0.5
-      outSlope: -0.5
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -39785,7 +39785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.26
+  racingLine: -0.07
   next: {fileID: 1197827874}
   prev: {fileID: 1208937335}
 --- !u!4 &1867229949
@@ -39968,7 +39968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.15
+  racingLine: -0.5
   next: {fileID: 1590702640}
   prev: {fileID: 1562082725}
 --- !u!4 &1890465684
@@ -40312,7 +40312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.056630366
+  racingLine: -0.42
   next: {fileID: 1441862337}
   prev: {fileID: 111193402}
 --- !u!4 &1954268088
@@ -41150,7 +41150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.05619498
+  racingLine: 0.3
   next: {fileID: 1208937335}
   prev: {fileID: 1237820576}
 --- !u!4 &2039573281
@@ -41607,6 +41607,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7416217663357473095, guid: 283ebf0183aa4f64b827fde8ae7174c6,
         type: 3}
+    - target: {fileID: -2089757431321777612, guid: 998b4fa2f77cd5b468cdf002442b2959,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -7416217663357473095, guid: 671173f96ee08484b96686a6dede6cbe,
+        type: 3}
     - target: {fileID: -927199367670048503, guid: 998b4fa2f77cd5b468cdf002442b2959,
         type: 3}
       propertyPath: m_Name
@@ -41673,7 +41679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.6702987
+  racingLine: -0.43
   next: {fileID: 513646}
   prev: {fileID: 665654129}
 --- !u!4 &2107330150
@@ -41721,7 +41727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.52662694
+  racingLine: -0.34
   next: {fileID: 1845343212}
   prev: {fileID: 1625734582}
 --- !u!4 &2111833801

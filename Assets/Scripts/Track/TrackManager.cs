@@ -33,7 +33,7 @@ namespace Switchgrass.Track
 
         private void OnDrawGizmos()
         {
-            if (currentSector is null) return;
+            if (currentSector is null || stopCollectingData) return;
             
             Gizmos.color = Color.magenta;
             if (currentSector.SectorContains(car.transform.position))
