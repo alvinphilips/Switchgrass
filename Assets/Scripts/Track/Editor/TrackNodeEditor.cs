@@ -59,8 +59,6 @@ namespace Switchgrass.Track.Editor
             // Big, messy, eventually clean up
             if (Event.current.keyCode == KeyCode.E && trackNodes.Count == 1 && trackNodes[0].next is null)
             {
-                Event.current.Use();
-                
                 var current = trackNodes[0];
                 var position = current.transform.position + current.transform.forward;
 
