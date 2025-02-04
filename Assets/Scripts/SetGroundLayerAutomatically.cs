@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class SetGroundLayerAutomatically : MonoBehaviour
+namespace Switchgrass
 {
-    private void Awake()
+    public class SetGroundLayerAutomatically : MonoBehaviour
     {
-        var groundLayer = LayerMask.NameToLayer("Ground");
-        gameObject.layer = groundLayer;
-        for (var childIndex = 0; childIndex < transform.childCount; childIndex++)
+        private void Awake()
         {
-            transform.GetChild(childIndex).gameObject.layer = groundLayer;
+            var groundLayer = LayerMask.NameToLayer("Ground");
+            gameObject.layer = groundLayer;
+            for (var childIndex = 0; childIndex < transform.childCount; childIndex++)
+            {
+                transform.GetChild(childIndex).gameObject.layer = groundLayer;
+            }
         }
     }
 }
