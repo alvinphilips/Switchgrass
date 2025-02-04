@@ -37,7 +37,7 @@ namespace Switchgrass.Track.Editor
                 ToolManager.SetActiveTool<TrackNodeEditor>();
             }
         }
-
+        
         public override void OnToolGUI(EditorWindow window)
         {
             if (window is not SceneView)
@@ -55,24 +55,78 @@ namespace Switchgrass.Track.Editor
             if (!Event.current.isKey) return;
 
             EditorGUI.BeginChangeCheck();
+            
+            // Big, messy, eventually clean up
             if (Event.current.keyCode == KeyCode.E && trackNodes.Count == 1 && trackNodes[0].next is null)
             {
+                Event.current.Use();
+                
                 var current = trackNodes[0];
-
-                var parent = current.transform.parent;
-
                 var position = current.transform.position + current.transform.forward;
 
-                var next = Instantiate(current, position, current.transform.rotation, parent);
-                Undo.RegisterCreatedObjectUndo (next.gameObject, "Created TrackNode");
-                next.name = "TN_" + namingNumber;
-                namingNumber++;
+                var next = CreateNode(current, position, current.transform.rotation);
+                
                 next.width = current.width;
                 next.racingLine = current.racingLine;
+                
                 current.JoinNode(next);
 
                 Selection.activeObject = next;
             }
+
+            if (Event.current.keyCode == KeyCode.I)
+            {
+                Event.current.Use();
+                
+                if (trackNodes.Count != 2)
+                {
+                    Debug.LogWarning("Two (2) adjacent nodes must be selected to [I]nsert a new node between them!");
+                    return;
+                }
+                
+                var first = trackNodes[0];
+                var second = trackNodes[1];
+                
+                // Make sure they're adjacent nodes
+                if (second.next == first)
+                {
+                    (first, second) = (second, first);
+                }
+                
+                if (first.next != second)
+                {
+                    Debug.LogWarning("Two adjacent nodes must be selected to [I]nsert a new node between them!");
+                    return;
+                }
+                
+                var position = Vector3.Lerp(first.transform.position, second.transform.position, 0.5f);
+                var rotation = Quaternion.Slerp(first.transform.rotation, second.transform.rotation, 0.5f);
+
+                var middle = CreateNode(first, position, rotation);
+                
+                middle.width = first.width;
+                middle.racingLine = Mathf.Lerp(first.racingLine, second.racingLine, 0.5f);
+                
+                first.JoinNode(middle);
+                middle.JoinNode(second);
+
+                Selection.activeObject = middle;
+            }
+            
+            EditorGUI.EndChangeCheck();
+        }
+
+        private TrackNode CreateNode(TrackNode original, Vector3 position, Quaternion rotation)
+        {
+            var parent = original.transform.parent;
+                
+            var newNode = Instantiate(original, position, rotation, parent);
+            Undo.RegisterCreatedObjectUndo (newNode.gameObject, "Created TrackNode");
+                
+            newNode.name = "TN_" + namingNumber;
+            namingNumber++;
+
+            return newNode;
         }
         
         public void OnDrawHandles()

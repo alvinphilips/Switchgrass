@@ -97,6 +97,11 @@ namespace Switchgrass.Track
                    && bottom.Cross(test2D - br2D) > 0;
         }
 
+        public Vector3 GetRacingLinePoint()
+        {
+            return transform.position + transform.right * width / 2 * racingLine;
+        }
+
         private void OnDrawGizmos()
         {
             var position = transform.position + Vector3.up * DisplayOffset;

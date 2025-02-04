@@ -20,7 +20,7 @@ namespace Switchgrass.Track
         [Header("Debugging")]
         [SerializeField] private bool useRacingLineValues;
         [SerializeField]
-        [TextArea] private string constructRacingLineValues;
+        [TextArea] private string constructRacingLineValues; // Quick and dirty 'persistence'
 
         private Vector3 prevCarPosition;
         private Vector3 currentCarPosition;
@@ -29,7 +29,7 @@ namespace Switchgrass.Track
         // List of Racing Line values, starting from the starting node.
         private readonly List<float> racingLineValues = new();
 
-        private bool stopCollectingData;
+        private bool stopCollectingData = true;
 
         private void OnDrawGizmos()
         {
@@ -48,6 +48,7 @@ namespace Switchgrass.Track
             currentSector = startNode;
         }
 
+        // Hey, it works :P
         private void OnValidate()
         {
             if (!useRacingLineValues) return;

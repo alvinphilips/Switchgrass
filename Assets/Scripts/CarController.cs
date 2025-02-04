@@ -89,8 +89,11 @@ public abstract class CarController : MonoBehaviour
 
     private void UpdateFrontWheelModelRotations()
     {
-        leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (TurnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
-        rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, (TurnInput * maxWheelTurn), rightFrontWheel.localRotation.eulerAngles.z);
+        var leftFrontWheelRotation = Mathf.MoveTowardsAngle(leftFrontWheel.localRotation.eulerAngles.y, TurnInput * maxWheelTurn - 180, 0.5f);
+        var rightFrontWheelRotation = Mathf.MoveTowardsAngle(rightFrontWheel.localRotation.eulerAngles.y, TurnInput * maxWheelTurn, 0.5f);
+        
+        leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, leftFrontWheelRotation, leftFrontWheel.localRotation.eulerAngles.z);
+        rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, rightFrontWheelRotation, rightFrontWheel.localRotation.eulerAngles.z);
     }
 
     private void FixedUpdate()
@@ -146,7 +149,7 @@ public abstract class CarController : MonoBehaviour
 
         transform.position = theRB.position;
 
-        if (grounded && Input.GetAxis("Horizontal") != 0)
+        if (grounded && TurnInput != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, TurnInput * turnStrength * Time.deltaTime * Mathf.Sign(SpeedInput) * (theRB.velocity.magnitude / maxSpeed), 0f));
         }
