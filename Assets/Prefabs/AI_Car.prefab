@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 1619697468890611226}
   - component: {fileID: 998478968930409858}
   - component: {fileID: 5073032223601853205}
+  - component: {fileID: 1125993251285661836}
   - component: {fileID: 3643510072868992326}
   m_Layer: 0
   m_Name: carPhysics
@@ -266,6 +267,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1125993251285661836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648355706571734613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502ac564e31335242a7efbe70bb1398b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToCheck: Wall
+  notifyEverySeconds: 60
 --- !u!114 &3643510072868992326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5435,7 +5450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5411148435170490375}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.96370727, z: -0, w: 0.26696128}
+  m_LocalRotation: {x: 0, y: 0.96370745, z: 0, w: 0.26696074}
   m_LocalPosition: {x: -64.81, y: 11.59, z: -85.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5484,9 +5499,11 @@ MonoBehaviour:
   engineSound: {fileID: 2919985661465536530}
   skidSound: {fileID: 4640885188778522190}
   skidFade: 2
-  currentTrackNode: {fileID: 0}
-  lookaheadDistance: 7.12
-  turnInputMultiplier: 10
+  currentSector: {fileID: 0}
+  seekingTrackNode: {fileID: 0}
+  steeringBehaviours: []
+  lookaheadDistance: 10
+  turnInputMultiplier: 5
   accelerationBySteeringAngle:
     serializedVersion: 2
     m_Curve:

@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
+﻿// Handles
+using System.Collections.Generic;
+using Switchgrass.AI;
 using Switchgrass.Patterns;
 using Switchgrass.Track;
+using UnityEditor;
 using UnityEngine;
 
-// Handles
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
-namespace Switchgrass.AI
+namespace Switchgrass.Game
 {
     public class RaceManager : Singleton<RaceManager>
     {
@@ -64,10 +62,14 @@ namespace Switchgrass.AI
 
         private float GetTotalCarTrackDistance(CarController car)
         {
-            return _laps[car] * _totalTrackDistance + car.GetTrackDistance();
+            // TODO: we're not currently incrementing the laps. this is mostly fine because the AI Racers don't care
+            // about laps.
+            // Total distance would be: _laps[car] * _totalTrackDistance + car.GetTrackDistance()
+
+            return car.GetTrackDistance();
         }
 
-        public void Update()
+        private void Update()
         {
             var playerDistance = GetTotalCarTrackDistance(_player);
 
@@ -105,7 +107,7 @@ namespace Switchgrass.AI
         {
             _aiCars.Remove(racer);
         }
-
+        
         #if UNITY_EDITOR
         public void OnDrawGizmos()
         {

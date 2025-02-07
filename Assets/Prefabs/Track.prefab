@@ -1086,6 +1086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8000479393964095575}
   - component: {fileID: 4170034864838090691}
+  - component: {fileID: 8078833335551384189}
   m_Layer: 0
   m_Name: TN_107
   m_TagString: Untagged
@@ -1125,6 +1126,36 @@ MonoBehaviour:
   next: {fileID: 5197345810133848114}
   prev: {fileID: 1493004614811323652}
   length: -1
+--- !u!114 &8078833335551384189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702101342884206434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f58447e6954872820abdcd2cc7833d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  performActionOnEvent: 1
+  checkTag: 1
+  tagToCheck: Player
+  onAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4170034864838090691}
+        m_TargetAssemblyTypeName: Switchgrass.Track.TrackNode, Assembly-CSharp
+        m_MethodName: CalculateLength
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1710404468306037225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: 0.45246023
+  racingLine: 0.299
   next: {fileID: 6891631978874474583}
   prev: {fileID: 1036136636698769731}
   length: -1
@@ -3074,13 +3105,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4620049873535853992}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.79335254, z: -0, w: 0.60876256}
-  m_LocalPosition: {x: -23.789337, y: 13.855, z: 10.647568}
+  m_LocalRotation: {x: -0, y: -0.8660246, z: -0, w: 0.50000143}
+  m_LocalPosition: {x: -23.76, y: 13.855, z: 9.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3687024996635415050}
-  m_LocalEulerAnglesHint: {x: 0, y: -105, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
 --- !u!114 &564960287086910740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3094,7 +3125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  racingLine: -0.52
+  racingLine: -0.14
   next: {fileID: 4510938263905574708}
   prev: {fileID: 7173647618859492506}
   length: -1
@@ -3271,13 +3302,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4963330612755029780}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.4999991, z: -0, w: 0.8660259}
-  m_LocalPosition: {x: -20.133247, y: 13.85479, z: 9.980103}
+  m_LocalRotation: {x: -0, y: -0.6087605, z: -0, w: 0.79335415}
+  m_LocalPosition: {x: -18.74, y: 13.85457, z: 9.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3687024996635415050}
-  m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -75, z: 0}
 --- !u!114 &7173647618859492506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3290,8 +3321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138ad7c2aca245140aa6a3bd8e80bcdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  racingLine: 0
+  width: 8.38
+  racingLine: 0.58
   next: {fileID: 564960287086910740}
   prev: {fileID: 1247399543142551408}
   length: -1
