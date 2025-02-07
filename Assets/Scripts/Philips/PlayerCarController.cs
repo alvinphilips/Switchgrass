@@ -6,11 +6,11 @@ namespace Switchgrass
     public class PlayerCarController: CarController
     {
         // We switch to using Gamepad input if we detect any (PlayerInput send us a message)
-        private bool useJoystick;
+        private bool _useJoystick;
         
         protected override void GetControlInput()
         {
-            if (useJoystick) return;
+            if (_useJoystick) return;
             
             SpeedInput = 0f;
 
@@ -34,14 +34,14 @@ namespace Switchgrass
 
         private void OnSteering(InputValue steering)
         {
-            useJoystick = true;
+            _useJoystick = true;
             
             TurnInput = steering.Get<float>();
         }
 
         private void OnAcceleration(InputValue acceleration)
         {
-            useJoystick = true;
+            _useJoystick = true;
             
             var vertical = acceleration.Get<float>();
 

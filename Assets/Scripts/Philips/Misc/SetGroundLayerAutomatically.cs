@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Switchgrass
+namespace Switchgrass.Misc
 {
     public class SetGroundLayerAutomatically : MonoBehaviour
     {

@@ -17,7 +17,8 @@ namespace Switchgrass.Track
         public TrackNode next;
         public TrackNode prev;
         
-        private float length = -1;
+        public float length = -1;
+        public virtual TrackNode Next => next;
         
         // Display 'Settings' for ease-of-use
         public const float DisplayOffset = 0.2f;
@@ -52,8 +53,14 @@ namespace Switchgrass.Track
                 prev.CalculateLength();
             }
             
-            var toPrev = Vector3.Distance(transform.position, prev.transform.position);
+            var toPrev = Vector3.Distance(GetRacingLinePoint(), prev.GetRacingLinePoint());
             length = prev.length + toPrev;
+        }
+
+        public virtual bool TryGetNextNode(out TrackNode nextNode)
+        {
+            nextNode = next;
+            return nextNode is not null;
         }
 
         /// <summary>
@@ -102,7 +109,7 @@ namespace Switchgrass.Track
             return transform.position + transform.right * width / 2 * racingLine;
         }
 
-        private void OnDrawGizmos()
+        protected virtual void OnDrawGizmos()
         {
             var position = transform.position + Vector3.up * DisplayOffset;
             var offset = transform.right * width / 2;
