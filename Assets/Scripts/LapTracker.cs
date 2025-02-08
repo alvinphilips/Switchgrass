@@ -29,6 +29,8 @@ public class LapTracker : MonoBehaviour
 
     public bool raceOver;
 
+    public int CurrentLap => lap;
+
     public AudioSource raceStartBeep;
 
     void Awake()
