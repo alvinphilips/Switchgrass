@@ -42,6 +42,7 @@ namespace Switchgrass.AI
         public override void Init(AICarController agent)
         {
             base.Init(agent);
+            if (!RaceManager.IsValid) return;
             _currentTrackNode = RaceManager.Instance.GetStartingSectorNode();
         }
 
@@ -58,7 +59,7 @@ namespace Switchgrass.AI
 
         public override void DrawGizmos()
         {
-            if (_currentTrackNode is null) return;
+            if (!RaceManager.IsValid || _currentTrackNode is null) return;
             
             // Draw our 'target' node, the one we're aiming for
             var target = _currentTrackNode.GetRacingLinePoint();
