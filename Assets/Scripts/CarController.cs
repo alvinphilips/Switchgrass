@@ -38,7 +38,7 @@ namespace Switchgrass
         public TrackNode currentSector;
     
         // Start is called before the first frame update
-        private void Start()
+        protected virtual void Start()
         {
             theRB.transform.parent = null; // unparents the physics and model
         }

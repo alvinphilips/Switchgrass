@@ -5500,34 +5500,10 @@ MonoBehaviour:
   skidSound: {fileID: 4640885188778522190}
   skidFade: 2
   currentSector: {fileID: 0}
-  seekingTrackNode: {fileID: 0}
-  steeringBehaviours: []
-  lookaheadDistance: 10
-  turnInputMultiplier: 5
-  accelerationBySteeringAngle:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  steeringBehaviours:
+  - {fileID: 11400000, guid: 9fba72f66da3e2448a0c109245f3ec73, type: 2}
+  - {fileID: 11400000, guid: dba46d99a97cfd243b38006a51864999, type: 2}
+  - {fileID: 11400000, guid: 789108cd07c39b4409b7a20b5830e762, type: 2}
 --- !u!1 &5665642160690798313
 GameObject:
   m_ObjectHideFlags: 0

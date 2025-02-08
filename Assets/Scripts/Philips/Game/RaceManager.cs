@@ -50,7 +50,6 @@ namespace Switchgrass.Game
             foreach (var aiCar in _aiCars)
             {
                 aiCar.currentSector = startSector;
-                aiCar.seekingTrackNode = startSector;
                 _laps.Add(aiCar, 0);
             }
 
@@ -106,6 +105,11 @@ namespace Switchgrass.Game
         public void DeregisterAIRacer(AICarController racer)
         {
             _aiCars.Remove(racer);
+        }
+
+        public TrackNode GetStartingSectorNode()
+        {
+            return startNode.next;
         }
         
         #if UNITY_EDITOR

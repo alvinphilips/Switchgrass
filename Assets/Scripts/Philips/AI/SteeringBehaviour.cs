@@ -11,9 +11,15 @@ namespace Switchgrass.AI
     public abstract class SteeringBehaviour: ScriptableObject
     {
         public float weight = 1;
-        public AICarController agent;
+        protected AICarController Agent;
 
-        public abstract void Init();
-        public abstract CarControlInput CalculateForce();
+        public virtual void Init(AICarController agent)
+        {
+            Agent = agent;
+        }
+        
+        public abstract CarControlInput GetControlInput();
+        
+        public virtual void DrawGizmos() {}
     }
 }

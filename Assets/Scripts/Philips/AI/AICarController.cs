@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Switchgrass.Game;
-using Switchgrass.Track;
-using Switchgrass.Utils;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Switchgrass.AI
 {
     public class AICarController: CarController
     {
-        public TrackNode seekingTrackNode;
-
         [Header("Agent Settings")]
         [SerializeField] private List<SteeringBehaviour> steeringBehaviours = new();
-        
-        [Header("Driving Settings")]
-        [SerializeField, Range(1f, 10f)] private float lookaheadDistance = 5f;
-        [SerializeField] private float turnInputMultiplier = 1000f;
-        [SerializeField] private AnimationCurve accelerationBySteeringAngle;
 
         private void OnEnable()
         {
@@ -33,32 +22,48 @@ namespace Switchgrass.AI
             }
         }
 
-        protected override void GetControlInput()
+        protected override void Start()
         {
-            var target = seekingTrackNode.GetRacingLinePoint();
+            base.Start();
             
-            if (Vector3.Distance(target, transform.position) < lookaheadDistance && seekingTrackNode.TryGetNextNode(out var nextNode))
+            foreach (var steeringBehaviour in steeringBehaviours)
             {
-                seekingTrackNode = nextNode;
-                target = seekingTrackNode.GetRacingLinePoint();
+                steeringBehaviour.Init(this);
             }
-
-            var dir = (target - transform.position).Flatten().normalized;
-
-            TurnInput = Mathf.Clamp(dir.Cross(transform.forward.Flatten().normalized * turnInputMultiplier), -1, 1);
-            SpeedInput = fowardAccel * accelerationBySteeringAngle.Evaluate(Mathf.Abs(TurnInput));
         }
 
-        private void OnDrawGizmosSelected()
+        private void OnValidate()
         {
-            if (seekingTrackNode is null) return;
+            foreach (var steeringBehaviour in steeringBehaviours)
+            {
+                steeringBehaviour.Init(this);
+            }
+        }
+
+        protected override void GetControlInput()
+        {
+            TurnInput = 0;
+            SpeedInput = 0;
             
-            // Draw our 'target' node, the one we're aiming for
-            var target = seekingTrackNode.transform.position + seekingTrackNode.transform.right *
-                seekingTrackNode.width / 2 * seekingTrackNode.racingLine;
-            
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawSphere(target, 0.5f);
+            // Accumulate control inputs
+            foreach (var steeringBehaviour in steeringBehaviours)
+            {
+                var controlInput = steeringBehaviour.GetControlInput();
+                TurnInput += controlInput.TurnInput * steeringBehaviour.weight;
+                SpeedInput += controlInput.SpeedInput * steeringBehaviour.weight;
+            }
+
+            // Clamp controls to their range
+            TurnInput = Mathf.Clamp(TurnInput, -1, 1);
+            SpeedInput = Mathf.Clamp(SpeedInput, reverseAccel, fowardAccel);
+        }
+
+        private void OnDrawGizmos()
+        {
+            foreach (var steeringBehaviour in steeringBehaviours)
+            {
+                steeringBehaviour.DrawGizmos();
+            }
         }
     }
 }
