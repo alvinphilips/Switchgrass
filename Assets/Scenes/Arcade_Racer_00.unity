@@ -3195,7 +3195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510760781}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92383ef141d0c494bbaeece6a4b65a52, type: 3}
   m_Name: 
@@ -3211,6 +3211,7 @@ MonoBehaviour:
   raceStarting: 0
   timeBetweenStartCount: 1
   raceOver: 0
+  ignoreLapComplete: 1
   raceStartBeep: {fileID: 1539120051}
 --- !u!1001 &523868456
 PrefabInstance:

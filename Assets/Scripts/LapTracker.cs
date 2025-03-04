@@ -29,6 +29,8 @@ public class LapTracker : MonoBehaviour
 
     public bool raceOver;
 
+    [SerializeField] private bool ignoreLapComplete;
+
     public int CurrentLap => lap;
 
     public AudioSource raceStartBeep;
@@ -52,8 +54,11 @@ public class LapTracker : MonoBehaviour
         raceOver = false;
         startCounter = timeBetweenStartCount;
 
-        UIManager.instance.lapCounter.text = "Lap#" + lap;
-        UIManager.instance.countDownText.text = countdownCurrent + "";
+        if (UIManager.instance)
+        {
+            UIManager.instance.lapCounter.text = "Lap#" + lap;
+            UIManager.instance.countDownText.text = countdownCurrent + "";
+        }
     }
 
     private void Update()
@@ -67,7 +72,10 @@ public class LapTracker : MonoBehaviour
                 countdownCurrent--;
                 startCounter = timeBetweenStartCount;
 
-                UIManager.instance.countDownText.text = countdownCurrent + "";
+                if (UIManager.instance)
+                {
+                    UIManager.instance.countDownText.text = countdownCurrent + "";
+                }
                 raceStartBeep.Stop();
                 raceStartBeep.Play();
 
@@ -75,20 +83,23 @@ public class LapTracker : MonoBehaviour
                 {
 
                     raceStarting = false;
-                    UIManager.instance.countDownText.gameObject.SetActive(false);
+                    if (UIManager.instance)
+                    {
+                        UIManager.instance.countDownText.gameObject.SetActive(false);
+                        UIManager.instance.goTex.gameObject.SetActive(true);
+                    }
                     raceStartBeep.pitch = 1f; 
                     raceStartBeep.Play();
-                    UIManager.instance.goTex.gameObject.SetActive(true);
                 }
             }
         }
-        else
-        {
-            if (!raceOver)
-            { 
+        else if (!raceOver)
+        { 
             lapTime += Time.deltaTime;
             ts = System.TimeSpan.FromSeconds(lapTime);
-            UIManager.instance.lapTimeText.text = string.Format("{0:00}m{1:00}.{2:00}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+            if (UIManager.instance)
+            {
+                UIManager.instance.lapTimeText.text = string.Format("{0:00}m{1:00}.{2:00}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
             }
         }
 
@@ -176,17 +187,20 @@ public class LapTracker : MonoBehaviour
     }
     void LapComplete()
     {
-        if (lap == 1)
+        if (UIManager.instance)
         {
-            UIManager.instance.lap1TimeText.text = string.Format("lap1 - {0:00}m{1:00}.{2:00}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
-        }
-        if (lap == 2) 
-        {
-            UIManager.instance.lap2TimeText.text = string.Format("lap2 - {0:00}m{1:00}.{2:00}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
-        }
-        if (lap == 3)
-        {
-            UIManager.instance.lap3TimeText.text = string.Format("lap3 - {0:00}m{1:00}.{2:00}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
+            switch (lap)
+            {
+            case 1:
+                UIManager.instance.lap1TimeText.text = $"lap1 - {ts.Minutes:00}m{ts.Seconds:00}.{ts.Milliseconds:00}s";
+                break;
+            case 2:
+                UIManager.instance.lap2TimeText.text = $"lap2 - {ts.Minutes:00}m{ts.Seconds:00}.{ts.Milliseconds:00}s";
+                break;
+            case 3:
+                UIManager.instance.lap3TimeText.text = $"lap3 - {ts.Minutes:00}m{ts.Seconds:00}.{ts.Milliseconds:00}s";
+                break;
+            }
         }
 
         lap++;
@@ -200,11 +214,17 @@ public class LapTracker : MonoBehaviour
             //raceStarting = true;
             raceOver = true;
             lap -= lap;
-            UIManager.instance.raceOverText.gameObject.SetActive(true);
+            if (UIManager.instance)
+            {
+                UIManager.instance.raceOverText.gameObject.SetActive(true);
+            }
 
         }
 
-        UIManager.instance.lapCounter.text = "Lap#" + lap;
+        if (UIManager.instance)
+        {
+            UIManager.instance.lapCounter.text = "Lap#" + lap;
+        }
         lapTime = 0f;
         
     }
